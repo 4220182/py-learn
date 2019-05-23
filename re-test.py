@@ -10,6 +10,6 @@ if m :
   print(m.group(2))
 
 try :
-  print(a)
+  print(b)
 except :
   print("error")
