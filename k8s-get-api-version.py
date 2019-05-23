@@ -22,7 +22,6 @@ api_instance = kubernetes.client.ApisApi(kubernetes.client.ApiClient())
 
 try:
     api_response = api_instance.get_api_versions()
-    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApisApi->get_api_versions: %s\n" % e)
 

@@ -26,7 +26,7 @@ kubeApi = client.CoreV1Api()
 try:
     allPods = kubeApi.list_pod_for_all_namespaces(watch=False)
     for item in allPods.items :
-        print(item.metadata.name, item.status.pod_ip)
+        print(item.metadata.name, item.status.pod_ip,item.status.container_statuses[0])
 
 except ApiException as e:
     print("Exception when calling CoreV1Api->list_pod_for_all_namespaces: %s\n" % e)
