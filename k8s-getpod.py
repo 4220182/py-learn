@@ -14,7 +14,6 @@ from kubernetes import client, config
 config.load_kube_config()
 
 v1 = client.CoreV1Api()
-print("Listing pods with their IPs:")
 
 pod_name='curl-7cb5f8c5fc-nwgxx'
 resp = v1.read_namespaced_pod_status(pod_name, 'default')
