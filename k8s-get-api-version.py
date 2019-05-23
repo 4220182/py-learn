@@ -1,6 +1,9 @@
 '''
 文档： https://github.com/kubernetes-client/python/blob/master/kubernetes/README.md
 
+参考：
+https://stackoverflow.com/questions/48687153/where-can-i-get-the-api-key-in-kubernetes-installation
+
 参考：https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/ApisApi.md#get_api_versions
 改动可以运行的例子
 '''
