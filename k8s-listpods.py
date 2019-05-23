@@ -1,5 +1,9 @@
 '''
+安装：
 $ sudo pip3.6 install kubernetes
+
+api 文档：
+https://github.com/kubernetes-client/python/blob/master/kubernetes/README.md
 '''
 from kubernetes import client, config
 
