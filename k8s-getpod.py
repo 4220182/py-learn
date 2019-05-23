@@ -5,8 +5,8 @@ $ sudo pip3.6 install kubernetes
 api 文档：
 https://github.com/kubernetes-client/python/blob/master/kubernetes/README.md
 
-list pods :
-https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/CoreV1Api.md#list_pod_for_all_namespaces
+get pod status :
+https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/CoreV1Api.md#read_namespaced_pod_status
 '''
 from kubernetes import client, config
 
@@ -15,6 +15,7 @@ config.load_kube_config()
 
 v1 = client.CoreV1Api()
 print("Listing pods with their IPs:")
-ret = v1.list_pod_for_all_namespaces(watch=False)
-for i in ret.items:
-    print("%s\t%s\t%s\t%s" % (i.status.pod_ip, i.metadata.namespace, i.metadata.name,i.status.phase))
+
+pod_name='curl-7cb5f8c5fc-nwgxx'
+resp = v1.read_namespaced_pod_status(pod_name, 'default')
+print(pod_name,resp.status.host_ip,resp.status.pod_ip,resp.status.phase)
