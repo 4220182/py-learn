@@ -12,3 +12,8 @@ v1 = client.CoreV1Api()
 
 for node in v1.list_node().items:
     print(node.metadata.name,node.status.phase,node.status.addresses,node.status.capacity,node.status.allocatable)
+
+for node in v1.list_node().items:
+    images = node.status.images
+    for image in images :
+        print(image)
