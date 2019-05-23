@@ -1,7 +1,8 @@
 '''
 文档： https://github.com/kubernetes-client/python/blob/master/kubernetes/README.md
 
-https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/ApisApi.md#get_api_versions
+参考：https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/ApisApi.md#get_api_versions
+改动可以运行的例子
 '''
 from __future__ import print_function
 
