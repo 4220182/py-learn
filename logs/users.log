@@ -1,0 +1,8 @@
+2019-02-19 23:02:36,573 DEBUG [ITestService] com.test.addMoney Arguments:[河路127, 200] Returns: 0cost : 1
+2019-02-19 23:03:26,573 DEBUG [ITestService] com.test.addMoney Arguments:[e127, 230] Returns: 0cost : 1
+2019-02-19 23:04:16,573 DEBUG [ITestService] com.test.addMoney Arguments:[k127, 100] Returns: 0cost : 1
+2019-02-19 23:05:46,573 DEBUG [ITestService] com.test.addMoney Arguments:[河路127, 300] Returns: 0cost : 1
+2019-02-19 23:06:26,573 DEBUG [ITestService] com.test.addMoney Arguments:[a127, 200] Returns: 0cost : 1
+2019-02-19 23:07:36,573 DEBUG [ITestService] com.test.addMoney Arguments:[中国127, 200] Returns: 0cost : 1
+2019-02-19 23:07:37,573 DEBUG [ITestService] com.test.addMoney Arguments:[河路127, 200] Returns: 0cost : 1
+2019-02-19 23:58:16,573 DEBUG [ITestService] com.test.addMoney Arguments:[河路127, 200] Returns: 0cost : 1
