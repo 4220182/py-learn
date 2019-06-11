@@ -63,7 +63,7 @@ urls = []
 
 # 随机生成1000个网址，并放进数组中
 i = 0
-while i < 500 :
+while i < 5 :
     ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
     urls.append("https://amazonaws-china.com/cn/" + ran_str)
     i += 1
@@ -82,7 +82,7 @@ for url in urls:
     print("new Thread end: "+url)
 
 for t in threadList:
-    t.start()
+    t.start()  # 运行线程
     print("thread start: "+ t.getName())
 
 for t in threadList:
