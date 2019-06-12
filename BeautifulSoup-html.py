@@ -1,7 +1,10 @@
 """
 
 Beautiful Soup ：
-参考：https://www.jb51.net/article/143229.htm
+参考：
+https://www.jb51.net/article/143229.htm
+https://blog.csdn.net/love666666shen/article/details/77512353
+
 是一个可以从 HTML 或 XML 文件中提取数据的 Python 库，它能够通过你喜欢的转换器实现惯用的文档导航、查找、修改文档的方式，能够帮你节省数小时甚至数天的工作时间。
 
 Beautiful Soup是python的一个库，最主要的功能是从网页抓取数据.
@@ -39,6 +42,8 @@ soup = BeautifulSoup(html_doc, "lxml")
 
 print(soup.title)
 print(soup.title.string)
-print(soup.a)
-print(soup.find_all('a'))
 print(soup.find_all(id='result_logo'))
+print("---a---")
+for a in soup.find_all('a'):
+    print(a, a['href'], a.get_text())
+    print(a.attrs)
