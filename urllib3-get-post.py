@@ -1,9 +1,6 @@
 """
 urllib3 参考：https://www.jb51.net/article/143444.htm
 
-Beautiful Soup ：
-参考：https://www.jb51.net/article/143229.htm
-是一个可以从 HTML 或 XML 文件中提取数据的 Python 库，它能够通过你喜欢的转换器实现惯用的文档导航、查找、修改文档的方式，能够帮你节省数小时甚至数天的工作时间。
 
 测试网址：http://httpbin.org
 get ： http://httpbin.org/get
