@@ -20,3 +20,7 @@ def test2(team,**members) :
 
 test2('my2',test1=1)
 test2('my2',test1=1,test2=2)
+
+
+# if __name__ == "__main__":
+#     main()
