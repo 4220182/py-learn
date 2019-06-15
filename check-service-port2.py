@@ -2,7 +2,7 @@
 tcp端口状态检查
 
 参考：
-https://www.jb51.net/article/144318.htm
+https://www.jb51.net/article/155369.htm
 """
 
 import socket

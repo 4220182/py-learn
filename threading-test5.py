@@ -28,7 +28,7 @@ import random
 import string
 import certifi
 import time
-def getContext(url,data) :
+def getContext(url) :
     print("http starging "+ url)
     headers = {
        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'
@@ -39,7 +39,7 @@ def getContext(url,data) :
     print("http end " + url)
     saveContext(url,r.data.decode())
 
-def saveContext(url,data) :
+def saveContext(url) :
     print("write file staring: "+url)
     path = "/Users/zyh/tmp/files"
     p = '^http(|s):\\/\\/(.*?)\\/.*?'
@@ -76,7 +76,7 @@ while i < 5 :
 threadList = []
 for url in urls:
     print("new Tread staring: " + url)
-    m = threading.Thread(target=getContext, args=(url,"data"))  # 为啥不能使用一个参数？
+    m = threading.Thread(target=getContext, args=(url,))  # 如果只有一个参数,后面需要加","
     m.setName(url)
     threadList.append(m)
     print("new Thread end: "+url)

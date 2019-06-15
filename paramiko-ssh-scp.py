@@ -20,6 +20,7 @@ ssh.connect(hostname='127.0.0.1', port=22, username='test', password='test')
 
 # 执行命令
 stdin, stdout, stderr = ssh.exec_command('touch /tmp/test.log')
+stdin2, stdout2, stderr2 = ssh.exec_command('touch /tmp/test2.log')
 
 # 获取命令结果
 result = stdout.read()
