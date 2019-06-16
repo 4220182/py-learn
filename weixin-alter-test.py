@@ -14,12 +14,18 @@ json 参考：
 https://www.cnblogs.com/OnlyDreams/p/7850920.html
 
 问题：
-1. 目前发送到部门，如果内容是中文，就会显示乱码；发送到@all，就不会是乱码
-   百度搜：urllib3 企业微信发消息乱码
-   解决此问题，改用 requests 库（还没测试）
-参考：
-https://www.jianshu.com/p/084d6bf2bdea
-https://cloud.tencent.com/developer/news/272595
+1. 目前发送到部门，如果内容是中文，就会显示乱码；发送到@all，就不会是乱码。
+   原因：json.dumps 序列化时默认使用的ascii编码，想输出真正的中文需要指定ensure_ascii=False：
+        更深入分析，是应为dJSONobject 不是单纯的unicode实现，而是包含了混合的unicode编码以及已经用utf-8编码之后的字符串。
+   解决方法：
+   message_body = bytes(json.dumps(body), 'utf-8')
+   改为：
+   message_body=json.dumps(body, ensure_ascii=False).encode('utf-8')
+   参考：
+   https://www.jianshu.com/p/8328397a630b?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
+2.
+
+
 """
 
 import urllib3
@@ -44,20 +50,21 @@ def postContext(url, agentid):
     http = urllib3.PoolManager()
     message = "我爱祖国"
     body = {
-        'touser': '@all', #向用户发送信息
-        #'toparty': 2, #向部门发送信息，填写部门ID
+        #'touser': '@all', #向用户发送信息
+        'toparty': 2, #向部门发送信息，填写部门ID
         'msgtype': 'text',
         'agentid': agentid,
         'text': {"content": message},
         'safe': 0
         }
-    message_body = bytes(json.dumps(body), 'utf-8')
+    #message_body = bytes(json.dumps(body), 'utf-8')
+    message_body=json.dumps(body, ensure_ascii=False).encode('utf-8')
     r = http.request('post', url, headers=headers, body=message_body)
     return r.data.decode()
 
 AgentId = 1000002
-Secret = "xxxxxxxxx"
-corpId = "xxxxxxxxx"
+Secret = "xxxxxx"
+corpId = "XXXXXX"
 
 getTokenUrl = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid="+corpId+"&corpsecret="+Secret
 tokenMessage = json.loads(getContext(getTokenUrl))
