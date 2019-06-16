@@ -5,7 +5,9 @@
 3。 线程3，处理队列中的包含字符"b"的记录，并从队列中删除该记录
 4。 线程4，处理队列中的包含字符"c"的记录，并从队列中删除该记录
 
-urllib3 参考：https://www.jb51.net/article/143444.htm
+urllib3 参考：
+https://www.jianshu.com/p/df9b883fecae
+https://www.jb51.net/article/143444.htm
 
 """
 
