@@ -18,6 +18,12 @@ multiprocessing.Pool可以批量开启子进程（cpu有多少个核,就批量�
 2. 进程间通信
 multiprocessing.Process 可以直接用multiprocesssing.Queue等进行通信
 multiprocessing.Pool不能直接用multiprocessing.Queue进行通信，只能通过共享内存，或者用multiprocessing.Manager()进行进程间通信。
+
+3. 分布式进程
+如果愿意还可以将多个进程部署在不同的计算机上，做成分布式进程，
+具体的做法就是通过multiprocessing.managers模块中提供的管理器将Queue对象通过网络共享出来（注册到网络上让其他计算机可以访问），
+这部分内容也留到爬虫的专题再进行讲解。
+参考：https://github.com/jackfrued/Python-100-Days/blob/master/Day66-75/69.%E5%B9%B6%E5%8F%91%E4%B8%8B%E8%BD%BD.md
 """
 
 import os

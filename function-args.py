@@ -1,12 +1,17 @@
 """
 参考：https://www.runoob.com/python3/python3-function.html
 
+global 使用函数外的变量
 """
 # 加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。
+
+counter = 1
 def test(team,*members) :
+    global counter
     print(team,members)
     for members in members:
-        print(members)
+        counter = counter + 1
+        print(members, counter)
 
 test('my')
 test('my','test1')
