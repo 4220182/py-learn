@@ -9,6 +9,7 @@ https://prometheus.io/docs/concepts/metric_types
 https://blog.csdn.net/kozazyh/article/details/93240722
 
 使用python内置WSGI server: wsgiref ,考虑性能问题你也可以使用其他WSGI server
+WSGI server用了gevent, eventlet等 green thread技术，就可以支持更多并发。
 """
 
 from prometheus_client import start_http_server, Summary, Counter
