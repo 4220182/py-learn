@@ -8,7 +8,7 @@ import time
 counter = 0
 def debug_thread(name,delay) :
     global counter
-    while counter < 50000 :
+    while counter < 5 :
         time.sleep(delay)
         counter += 1
         print(name,time.ctime(time.time()))

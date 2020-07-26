@@ -6,4 +6,19 @@ fields = {
     'custemail': '13888888888@gmail.com'
 }
 
-print(type(fields))
+
+for a,b in fields.items() :
+    print(type(b))
+    if a=="custname" :
+        print("Y: " ,b)
+    elif a>"138" :
+        print ("N: " , b)
+    print(a,b)
+
+def users(name,age=20):
+    print (name,age)
+
+users("zyh")
+users("hello",30)
+
+

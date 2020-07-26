@@ -63,8 +63,8 @@ def postContext(url, agentid):
     return r.data.decode()
 
 AgentId = 1000002
-Secret = "xxxxxx"
-corpId = "XXXXXX"
+Secret = "bMTmFmjChbAQ5Z4UqV8gFeW_1p7lluAAKVeSR2k8QT8"
+corpId = "ww652896a3de468648"
 
 getTokenUrl = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid="+corpId+"&corpsecret="+Secret
 tokenMessage = json.loads(getContext(getTokenUrl))
