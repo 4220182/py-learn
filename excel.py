@@ -9,7 +9,7 @@ xlwt 写
 
 '''
 
-book = xlrd.open_workbook('/Users/hjd/Downloads/Untitled.xlsx')
+book = xlrd.open_workbook('/Users/test/Downloads/Untitled.xlsx')
 
 #列出工作表
 for sheet in book.sheets():
